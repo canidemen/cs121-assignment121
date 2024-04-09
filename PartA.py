@@ -1,18 +1,22 @@
-import re
 
 def tokenize(text_file_path):
     tokens = []
-    regex = r'\w+'
     try:
         with open(text_file_path, 'r') as file:
+            word = ""
             for line in file:
-                tokens.extend(re.findall(regex, line.lower()))
+                for char in line:
+                    order = ord(char)
+                    if (47 < order < 58) or (64 < order < 91) or (96 < order < 123):
+                        word += char
+                    else:
+                        if word:
+                            tokens.append(word)
+                        word = ""
     except FileNotFoundError:
         print(f"File not found: {text_file_path}")
-        return []
 
     return tokens
-
 
 
 def computeWordFrequencies(tokens: list[str]):
