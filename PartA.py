@@ -1,6 +1,8 @@
 
-def tokenize(text_file_path):
+def tokenize(text_file_path) -> list:
     """
+    Runtime Complexity: O(N)
+
     Opens the file specified by the given file path and tokenizes valid inputs to a list.
     The function iterates through the file character by character to identify and collect
     alphanumeric characters (a-z, A-Z, 0-9).
@@ -29,8 +31,10 @@ def tokenize(text_file_path):
     return tokens
 
 
-def computeWordFrequencies(tokens: list[str]):
+def computeWordFrequencies(tokens: list[str]) -> dict:
     """
+    Runtime Complexity: O(N)
+
     Computes the frequency of each word in the list of tokens.
 
     :param tokens: list[str]
@@ -53,12 +57,14 @@ def computeWordFrequencies(tokens: list[str]):
     return tokens_dict
 
 
-def print_tokens(frequencies: dict[str, int]):
+def print_tokens(frequencies: dict[str, int]) -> None:
     """
-       Prints the tokens and their frequencies in descending order of frequency and ascending order of token.
+    Runtime Complexity: O(N)
 
-       :param frequencies: dict[str, int]
-           A dictionary containing the frequencies of tokens.
+    Prints the tokens and their frequencies in descending order of frequency and ascending order of token.
+
+    :param frequencies: dict[str, int]
+       A dictionary containing the frequencies of tokens.
     """
 
     sorted_dict = dict(sorted(frequencies.items(), key=lambda item: (-item[1], item[0])))
