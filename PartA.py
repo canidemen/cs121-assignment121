@@ -1,5 +1,15 @@
 
 def tokenize(text_file_path):
+    """
+    Opens the file specified by the given file path and tokenizes valid inputs to a list.
+    The function iterates through the file character by character to identify and collect
+    alphanumeric characters (a-z, A-Z, 0-9).
+
+     :param text_file_path: str
+        A string representing the path to the text file.
+    :return: List[str]
+        A list of tokens extracted from the file.
+    """
     tokens = []
     try:
         with open(text_file_path, 'r') as file:
@@ -20,6 +30,15 @@ def tokenize(text_file_path):
 
 
 def computeWordFrequencies(tokens: list[str]):
+    """
+    Computes the frequency of each word in the list of tokens.
+
+    :param tokens: list[str]
+        A list of tokens.
+    :return: dict[str, int]
+        A dictionary storing the word frequencies in the file.
+    """
+
     tokens_dict = {}
     for i in tokens:
         try:
@@ -35,6 +54,13 @@ def computeWordFrequencies(tokens: list[str]):
 
 
 def print_tokens(frequencies: dict[str, int]):
+    """
+       Prints the tokens and their frequencies in descending order of frequency and ascending order of token.
+
+       :param frequencies: dict[str, int]
+           A dictionary containing the frequencies of tokens.
+    """
+
     sorted_dict = dict(sorted(frequencies.items(), key=lambda item: (-item[1], item[0])))
     for key, value in sorted_dict.items():
         print(key, " ", value)
