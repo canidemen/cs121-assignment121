@@ -14,6 +14,7 @@ PartA.py contains functions for tokenizing text files and computing word frequen
 
 - `print_tokens(frequencies: dict[str, int])`: Prints the tokens and their frequencies in descending order of frequency and ascending order of token.
       The overall time complexity of printing all tokens is O(N), where N is the number of unique tokens in the dictionary.
+
 ## PartB.py
 
 PartB.py provides a function for comparing word frequencies between two text files.
